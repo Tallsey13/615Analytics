@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>615 Analytics — FP&A Intelligence for Mid-Market</title>
+<meta name="description" content="Nashville-based finance automation. Senior FP&A expertise combined with proprietary tools that eliminate manual work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#0a1628;color:#e8edf5;line-height:1.6}
+
+/* NAV */
+nav{background:#0d1e35;border-bottom:1px solid rgba(255,255,255,0.06);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
+.logo{font-size:20px;font-weight:600;color:#fff;text-decoration:none}
+.logo span{color:#4a9eff}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:14px;color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:#fff}
+.nav-btn{background:#1a6ef7;color:#fff;border:none;border-radius:8px;padding:9px 20px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;transition:background 0.2s}
+.nav-btn:hover{background:#1560d4}
+
+/* HERO */
+.hero{padding:100px 2rem 80px;text-align:center;max-width:860px;margin:0 auto}
+.hero-tag{display:inline-block;background:rgba(26,110,247,0.12);color:#4a9eff;font-size:12px;font-weight:500;padding:6px 16px;border-radius:20px;border:1px solid rgba(74,158,255,0.2);margin-bottom:28px;letter-spacing:0.8px;text-transform:uppercase}
+.hero h1{font-size:52px;font-weight:600;line-height:1.1;color:#fff;margin-bottom:24px;letter-spacing:-1px}
+.hero h1 span{color:#4a9eff}
+.hero p{font-size:18px;color:rgba(255,255,255,0.5);line-height:1.75;max-width:600px;margin:0 auto 40px}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:#1a6ef7;color:#fff;border:none;border-radius:8px;padding:14px 32px;font-size:15px;font-weight:500;cursor:pointer;text-decoration:none;transition:background 0.2s}
+.btn-primary:hover{background:#1560d4}
+.btn-secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:8px;padding:14px 32px;font-size:15px;font-weight:500;cursor:pointer;text-decoration:none;transition:all 0.2s}
+.btn-secondary:hover{border-color:rgba(255,255,255,0.4);background:rgba(255,255,255,0.05)}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);max-width:720px;margin:60px auto;border:1px solid rgba(255,255,255,0.07);border-radius:14px;overflow:hidden}
+.stat{background:#0d1e35;padding:32px;text-align:center;border-right:1px solid rgba(255,255,255,0.07)}
+.stat:last-child{border-right:none}
+.stat-num{font-size:36px;font-weight:600;color:#4a9eff;margin-bottom:8px}
+.stat-label{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.4}
+
+/* SECTIONS */
+.section{padding:80px 2rem;max-width:1040px;margin:0 auto}
+.section-inner{text-align:left}
+.section-label{font-size:12px;font-weight:600;color:#4a9eff;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:14px}
+.section-title{font-size:34px;font-weight:600;color:#fff;margin-bottom:12px;letter-spacing:-0.5px}
+.section-sub{font-size:16px;color:rgba(255,255,255,0.4);margin-bottom:48px;max-width:520px;line-height:1.7}
+.divider{height:1px;background:rgba(255,255,255,0.05);margin:0}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.service-card{background:#0d1e35;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:32px;transition:border-color 0.2s,transform 0.2s}
+.service-card:hover{border-color:rgba(74,158,255,0.35);transform:translateY(-2px)}
+.service-icon{width:44px;height:44px;background:rgba(26,110,247,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.service-icon i{font-size:22px;color:#4a9eff}
+.service-card h3{font-size:17px;font-weight:600;color:#fff;margin-bottom:10px}
+.service-card p{font-size:14px;color:rgba(255,255,255,0.4);line-height:1.7}
+
+/* TOOLS */
+.tools-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.tool-card{background:#0d1e35;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:28px;display:flex;gap:18px;align-items:flex-start;transition:border-color 0.2s}
+.tool-card:hover{border-color:rgba(74,158,255,0.3)}
+.badge{border-radius:6px;padding:4px 10px;font-size:11px;font-weight:600;white-space:nowrap;margin-top:3px}
+.badge.live{background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);color:#34d399}
+.badge.soon{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.4)}
+.tool-info h3{font-size:16px;font-weight:600;color:#fff;margin-bottom:8px}
+.tool-info p{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.7}
+.tool-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:#4a9eff;text-decoration:none;margin-top:12px;font-weight:500}
+.tool-link:hover{text-decoration:underline}
+
+/* ABOUT */
+.about-card{background:#0d1e35;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:48px;display:grid;grid-template-columns:200px 1fr;gap:48px;align-items:start}
+.about-left{text-align:center}
+.avatar{width:100px;height:100px;border-radius:50%;background:rgba(26,110,247,0.15);border:2px solid rgba(74,158,255,0.25);display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:600;color:#4a9eff;margin:0 auto 16px}
+.about-name{font-size:16px;font-weight:600;color:#fff;margin-bottom:4px}
+.about-title{font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:16px}
+.creds{display:flex;flex-direction:column;gap:8px}
+.cred{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:5px 12px;font-size:12px;color:rgba(255,255,255,0.45);text-align:center}
+.about-text{font-size:15px;color:rgba(255,255,255,0.5);line-height:1.9}
+.about-text strong{color:#e8edf5;font-weight:500}
+.about-text p{margin-bottom:16px}
+.about-text p:last-child{margin-bottom:0}
+
+/* CTA */
+.cta{background:#0d1e35;border-top:1px solid rgba(255,255,255,0.05);padding:80px 2rem;text-align:center}
+.cta h2{font-size:34px;font-weight:600;color:#fff;margin-bottom:14px;letter-spacing:-0.5px}
+.cta p{font-size:16px;color:rgba(255,255,255,0.4);margin-bottom:32px}
+.cta-email{display:inline-block;font-size:18px;color:#4a9eff;text-decoration:none;font-weight:500;border-bottom:1px solid rgba(74,158,255,0.3);padding-bottom:2px}
+.cta-email:hover{border-color:#4a9eff}
+
+/* FOOTER */
+footer{padding:28px 2rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.05)}
+.footer-left{font-size:13px;color:rgba(255,255,255,0.25)}
+.footer-right{font-size:13px;color:rgba(255,255,255,0.25)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero h1{font-size:36px}
+  .services-grid,.tools-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr;border:none;gap:1px}
+  .stat{border-right:none;border-bottom:1px solid rgba(255,255,255,0.07)}
+  .about-card{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">615<span>analytics</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:halsey@615analytics.com" class="nav-btn">Get Started</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">Nashville-Based Finance Automation</div>
+  <h1>FP&amp;A intelligence.<br><span>Built for mid-market.</span></h1>
+  <p>Senior finance expertise combined with proprietary automation tools — so your team spends less time building reports and more time driving decisions.</p>
+  <div class="hero-btns">
+    <a href="#tools" class="btn-primary">Explore Our Tools</a>
+    <a href="#contact" class="btn-secondary">Work With Us</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-num">20+</div>
+    <div class="stat-label">Years FP&amp;A experience</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">F100</div>
+    <div class="stat-label">Fortune 100 background</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">PE</div>
+    <div class="stat-label">Private equity experience</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SERVICES -->
+<section id="services" class="section">
+  <div class="section-inner">
+    <div class="section-label">Services</div>
+    <div class="section-title">What we do</div>
+    <div class="section-sub">Fractional FP&amp;A leadership and custom analytics — without the full-time overhead.</div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><i class="ti ti-chart-bar" aria-hidden="true"></i></div>
+        <h3>Fractional FP&amp;A</h3>
+        <p>Senior-level financial planning and analysis on a fractional basis. Budgeting, forecasting, board reporting, and strategic financial guidance.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="ti ti-cpu" aria-hidden="true"></i></div>
+        <h3>Finance automation</h3>
+        <p>Custom-built automation that eliminates repetitive manual work — variance analysis, P&amp;L builds, KPI reporting, and more.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="ti ti-presentation-analytics" aria-hidden="true"></i></div>
+        <h3>Executive reporting</h3>
+        <p>Board decks, lender packages, and investor reporting designed to communicate clearly and drive confident decisions.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="ti ti-users" aria-hidden="true"></i></div>
+        <h3>Team &amp; process buildout</h3>
+        <p>Stand up a finance function from scratch or mature an existing one. Hiring, systems, processes, and training.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TOOLS -->
+<section id="tools" class="section">
+  <div class="section-inner">
+    <div class="section-label">Tools</div>
+    <div class="section-title">Proprietary software suite</div>
+    <div class="section-sub">Purpose-built tools that automate what used to take days. Upload your data and get results in minutes.</div>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <span class="badge live">Live</span>
+        <div class="tool-info">
+          <h3>FP&amp;A Variance Report</h3>
+          <p>Automated variance analysis with MTD, QTD, and YTD results. Actuals vs budget vs prior year — with AI-written commentary.</p>
+          <a href="https://fpa-variance-analysis.streamlit.app" target="_blank" class="tool-link">Launch tool <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="tool-card">
+        <span class="badge live">Live</span>
+        <div class="tool-info">
+          <h3>P&amp;L Builder</h3>
+          <p>Map your GL accounts to a custom P&amp;L structure once. Every month after — upload and run.</p>
+          <a href="#" class="tool-link">Launch tool <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="tool-card">
+        <span class="badge soon">Coming soon</span>
+        <div class="tool-info">
+          <h3>Budget &amp; forecast tool</h3>
+          <p>Driver-based budgeting and rolling forecast automation built for mid-market finance teams.</p>
+        </div>
+      </div>
+      <div class="tool-card">
+        <span class="badge soon">Coming soon</span>
+        <div class="tool-info">
+          <h3>KPI dashboard</h3>
+          <p>Connect your data and get a live KPI dashboard with automated commentary and trend analysis.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="section-inner">
+    <div class="section-label">About</div>
+    <div class="section-title">Who's behind this</div>
+    <div class="about-card">
+      <div class="about-left">
+        <div class="avatar">HO</div>
+        <div class="about-name">Halsey Otto</div>
+        <div class="about-title">Founder, 615 Analytics</div>
+        <div class="creds">
+          <span class="cred">MBA — UVA Darden</span>
+          <span class="cred">CPA (inactive)</span>
+          <span class="cred">Nashville, TN</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <p><strong>Big 4 trained. Fortune 100 tested. PE-hardened.</strong> 615 Analytics brings that experience to mid-market companies — paired with proprietary automation tools that do in minutes what used to take days.</p>
+        <p>20+ years across Deloitte, Ernst & Young, Exelon, Yahoo, and two PE-backed platforms — building finance organizations, standing up analytics functions, and driving the kind of operational insight that moves the needle.</p>
+        <p>The tools are built by a practitioner who has lived the problem — not a software company guessing at what finance teams actually need.</p>
+        <p>Based in Nashville. Built for companies that are serious about their numbers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CTA -->
+<section id="contact" class="cta">
+  <h2>Ready to automate your finance function?</h2>
+  <p>Let's talk about what's taking your team the most time — and how we can fix it.</p>
+  <a href="mailto:halsey@615analytics.com" class="cta-email">halsey@615analytics.com</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">© 2026 615 Analytics LLC. Nashville, TN.</div>
+  <div class="footer-right">615analytics.com</div>
+</footer>
+
+</body>
+</html>
