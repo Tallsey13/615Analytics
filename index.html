@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>615 Analytics — FP&A Intelligence for Mid-Market</title>
 <meta name="description" content="Nashville-based finance automation. Senior FP&A expertise combined with proprietary tools that eliminate manual work.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
@@ -123,7 +124,16 @@ footer{padding:28px 2rem;display:flex;justify-content:space-between;align-items:
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="logo">615<span>analytics</span></a>
+  <a href="#" class="logo" style="display:flex;align-items:center;text-decoration:none">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 44" height="32" role="img">
+      <title>615 Analytics</title>
+      <rect x="0" y="26" width="5" height="12" rx="1" fill="rgba(74,158,255,0.35)"/>
+      <rect x="7" y="18" width="5" height="20" rx="1" fill="rgba(74,158,255,0.6)"/>
+      <rect x="14" y="10" width="5" height="28" rx="1" fill="#4a9eff"/>
+      <text x="27" y="32" font-family="Inter,sans-serif" font-size="28" font-weight="800" fill="#4a9eff" letter-spacing="-1">615</text>
+      <text x="82" y="32" font-family="Inter,sans-serif" font-size="13" font-weight="400" fill="rgba(255,255,255,0.5)" letter-spacing="3">ANALYTICS</text>
+    </svg>
+  </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#tools">Tools</a></li>
@@ -271,7 +281,7 @@ footer{padding:28px 2rem;display:flex;justify-content:space-between;align-items:
   <h2>Ready to automate your finance function?</h2>
   <p>Let's talk about what's taking your team the most time — and how we can fix it.</p>
   <div class="contact-form-wrap">
-    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <form class="contact-form" id="contactForm" onsubmit="showConfirm(event)">
       <div class="form-row">
         <div class="form-group">
           <label for="name">Name</label>
@@ -290,10 +300,89 @@ footer{padding:28px 2rem;display:flex;justify-content:space-between;align-items:
         <label for="message">What are you working on?</label>
         <textarea id="message" name="message" rows="4" placeholder="Tell us what's taking your team the most time..." required></textarea>
       </div>
-      <button type="submit" class="btn-primary">Send Message</button>
+      <button type="submit" class="btn-primary">Review & Send</button>
     </form>
+
+    <!-- Confirmation overlay -->
+    <div id="confirmBox" style="display:none;background:#0d1e35;border:1px solid rgba(74,158,255,0.3);border-radius:14px;padding:28px;margin-top:16px">
+      <p style="font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:16px;text-transform:uppercase;letter-spacing:1px">Please confirm your details</p>
+      <div style="display:grid;gap:10px;margin-bottom:20px">
+        <div style="display:flex;gap:12px">
+          <span style="font-size:13px;color:rgba(255,255,255,0.4);width:70px">Name</span>
+          <span id="conf-name" style="font-size:13px;color:#fff;font-weight:500"></span>
+        </div>
+        <div style="display:flex;gap:12px">
+          <span style="font-size:13px;color:rgba(255,255,255,0.4);width:70px">Email</span>
+          <span id="conf-email" style="font-size:13px;color:#4a9eff;font-weight:500"></span>
+        </div>
+        <div style="display:flex;gap:12px">
+          <span style="font-size:13px;color:rgba(255,255,255,0.4);width:70px">Company</span>
+          <span id="conf-company" style="font-size:13px;color:#fff"></span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <span style="font-size:13px;color:rgba(255,255,255,0.4);width:70px">Message</span>
+          <span id="conf-message" style="font-size:13px;color:#fff;line-height:1.6"></span>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px">
+        <button onclick="submitForm()" class="btn-primary" style="flex:1">Confirm & Send</button>
+        <button onclick="editForm()" class="btn-secondary" style="flex:1">Edit</button>
+      </div>
+    </div>
+
+    <div id="successBox" style="display:none;background:#0d1e35;border:1px solid rgba(16,185,129,0.3);border-radius:14px;padding:28px;text-align:center">
+      <p style="font-size:18px;font-weight:500;color:#34d399;margin-bottom:8px">Message sent!</p>
+      <p style="font-size:14px;color:rgba(255,255,255,0.4)">We'll be in touch at <span id="conf-email-success" style="color:#4a9eff"></span></p>
+    </div>
+
     <p class="form-alt">Or email directly: <a href="mailto:halsey@615analytics.com" class="cta-email">halsey@615analytics.com</a></p>
   </div>
+
+  <script>
+  function showConfirm(e) {
+    e.preventDefault();
+    var name    = document.getElementById('name').value.trim();
+    var email   = document.getElementById('email').value.trim();
+    var company = document.getElementById('company').value.trim();
+    var message = document.getElementById('message').value.trim();
+    if (!name || !email || !message) return;
+    document.getElementById('conf-name').textContent    = name;
+    document.getElementById('conf-email').textContent   = email;
+    document.getElementById('conf-company').textContent = company || '—';
+    document.getElementById('conf-message').textContent = message;
+    document.getElementById('contactForm').style.display  = 'none';
+    document.getElementById('confirmBox').style.display   = 'block';
+  }
+
+  function editForm() {
+    document.getElementById('confirmBox').style.display  = 'none';
+    document.getElementById('contactForm').style.display = 'block';
+  }
+
+  function submitForm() {
+    var data = {
+      name:    document.getElementById('name').value,
+      email:   document.getElementById('email').value,
+      company: document.getElementById('company').value,
+      message: document.getElementById('message').value,
+    };
+    fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      method:  'POST',
+      headers: {'Content-Type': 'application/json'},
+      body:    JSON.stringify(data),
+    }).then(function(r) {
+      if (r.ok) {
+        document.getElementById('confirmBox').style.display   = 'none';
+        document.getElementById('conf-email-success').textContent = data.email;
+        document.getElementById('successBox').style.display   = 'block';
+      } else {
+        alert('Something went wrong. Please email halsey@615analytics.com directly.');
+      }
+    }).catch(function() {
+      alert('Something went wrong. Please email halsey@615analytics.com directly.');
+    });
+  }
+  </script>
 </section>
 
 <!-- FOOTER -->
