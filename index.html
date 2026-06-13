@@ -411,7 +411,7 @@ footer{padding:28px 2rem;display:flex;justify-content:space-between;align-items:
     }).then(function(r) {
       if (r.ok) {
         document.getElementById('confirmBox').style.display   = 'none';
-        document.getElementById('conf-email-success').textContent = data.email;
+        document.getElementById('conf-email-success').textContent = data.name;
         document.getElementById('successBox').style.display   = 'block';
       } else {
         alert('Something went wrong. Please email halsey@615analytics.com directly.');
